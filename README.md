@@ -8,10 +8,11 @@ Login page:
 ![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/1.png?raw=true)
 
 Main Screen:
-![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/2.png?raw=true)
+![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/2.png?raw=true){:height="36px" width="36px"}
 
 Filtered Data:
-![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/3.png?raw=true)
+<!-- ![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/3.png?raw=true)  -->
+<img src="https://github.com/gs3bopar/AnyMovie/images/3.png" width="48"> 
 
 Favorites:
 ![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/4.png?raw=true)
