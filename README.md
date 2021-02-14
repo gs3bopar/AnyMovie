@@ -6,20 +6,20 @@ This is a Django Application hosted on gcloud with postgres database. Currently 
 2) The purpose of this application is to give the user the ability to search for and contribute to large amounts of Movie information.
 3) Users can find movies on a variety of filtering criteria and can also post personal comments on Movies.
 
-Login Page
+## Login Page
 <img src="images/1.png">
 
-Main Screen
+## Main Screen
 <img src="images/2.png">
 
-Filtered Data
+## Filtered Data
 <img src="images/3.png">
 
-Favorites:
+## Favorites
 <img src="images/4.png">
 
-Commenting
+## Commenting
 <img src="images/5.png">
 
-Main Updated Screen
+## Main Updated Screen
 <img src="images/6.png">
