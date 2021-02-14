@@ -7,3 +7,17 @@ Users can find movies on a variety of filtering criteria and can also post perso
 Login page:
 ![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/1.png?raw=true)
 
+Main Screen:
+![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/2.png?raw=true)
+
+Filtered Data:
+![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/3.png?raw=true)
+
+Favorites:
+![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/4.png?raw=true)
+
+Commenting:
+![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/5.png?raw=true)
+
+Main Updated Screen:
+![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/6.png?raw=true)
