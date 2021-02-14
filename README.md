@@ -7,7 +7,7 @@ This is a Django Application hosted on gcloud with postgres database. Currently 
 3) Users can find movies on a variety of filtering criteria and can also post personal comments on Movies.
 
 Login Page
-<img src="images/1.png" width="400" height="350">
+<img src="images/1.png">
 
 Main Screen
 <img src="images/2.png" width="500" height="350">
