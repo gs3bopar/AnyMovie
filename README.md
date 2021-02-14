@@ -8,7 +8,7 @@ Login page:
 ![alt text](https://github.com/gs3bopar/AnyMovie/tree/main/images/1.png | width=100 )
 
 Main Screen:
-![alt text](https://github.com/gs3bopar/AnyMovie/tree/main/images/2.png =100x100)
+![alt text](https://github.com/gs3bopar/AnyMovie/main/images/2.png =100x100)
 
 Filtered Data:
 ![alt text](https://github.com/gs3bopar/AnyMovie/blob/main/images/3.png?raw=true) 
