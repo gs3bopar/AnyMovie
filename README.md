@@ -10,16 +10,16 @@ Login Page
 <img src="images/1.png">
 
 Main Screen
-<img src="images/2.png" width="500" height="350">
+<img src="images/2.png">
 
 Filtered Data
-<img src="images/3.png" width="600" height="350">
+<img src="images/3.png">
 
 Favorites:
-<img src="images/4.png" width="600" height="300">
+<img src="images/4.png">
 
 Commenting
-<img src="images/5.png" width="350" height="150">
+<img src="images/5.png">
 
 Main Updated Screen
-<img src="images/6.png" width="300" height="100">
+<img src="images/6.png">
