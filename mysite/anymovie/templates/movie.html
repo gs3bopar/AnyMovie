@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Results</title>
+{% endblock %}
+{% block content %}
+  {% for movie in movies %}
+  <div class="movie-details">
+    <div class="movie-name">
+      {{movie.name}}
+    </div>
+    <div class="movie-year">
+      ({{movie.release_year}})
+    </div>
+    <div class="movie-rating">
+      Rating: {{movie.rating|floatformat:1}}/10.0
+      {% if movie.rating_count %}
+        ({{movie.rating_count}} ratings)
+      {% else %}
+        (No ratings)
+      {% endif %}
+    </div>
+    <div class="movie-type">
+      Type: {{movie.type}}
+    </div>
+    <div class="movie-genre">
+      Genre:  {% for genre in movie.genre %}
+                {{genre}}{% if not forloop.last %},{% endif %}
+              {% endfor %}
+    </div>
+    <div>
+      {% if movie.isadult %}
+        Rated for Adults
+      {% endif %}
+    </div>
+    <div>
+        {% if directors %}
+        <br>
+        <h3>Director(s)</h3>
+        {% endif %}
+        {% for director in directors %}
+            {{director.name}}
+            <br>
+        {% endfor %}
+
+        {% if principals %}
+        <br>
+        <h3>Crew</h3>
+        {% endif %}
+        {% for principal in principals %}
+            {% if principal.characters %}
+                {{principal.characters}} -
+            {% else %}
+                {{principal.category}} -
+            {% endif %}
+            {{principal.name}}
+            <br>
+        {% endfor %}
+
+        <br>
+        <input id="Favourite" type='button' 
+              {% if favourite %} 
+                value="Unfavourite" class="Unfavourite-btn"
+              {% else %}
+                value="Favourite" class="Favourite-btn"
+              {% endif %} 
+              id="{{t_id}}">
+        <br>
+        <h3>Leave a review</h3>
+        <form method="post" style="margin-top: 1.3em;">
+          {{ review_form.as_p }}
+        {% csrf_token %}
+            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+
+        <h3>Reviews</h3>
+        {% for review in reviews %}
+        <div class="movie-review" style="text-align:left;">
+            User: {{review.username}}
+            <span style="float:right;">
+                {{review.time}}
+            </span> <br>
+            {% if review.rating %}
+            Rating: {{review.rating}}
+            {% endif %}
+            {% if review.comment %}
+            <p>
+                "{{review.comment}}"
+            </p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}
+{% block script %}
+<script>
+  $(function () {
+    $("#Favourite").on('click', function () {
+        var t_id = '{{t_id}}'
+        var value = $(this).attr('value');
+        $.ajax({
+          type: 'POST',
+          data: {
+          value: value,
+          t_id: t_id,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+          },
+          dataType: 'json',
+          url: '/favourite/save/',
+          success: function (data) {
+          },
+          error: function(error) {
+          }
+        });
+        if (value == "Unfavourite") { 
+          $(this).attr('value', 'Favourite');
+          $(this).attr('class', 'Favourite-btn');
+        } else {
+          $(this).attr('value', 'Unfavourite');
+          $(this).attr('class', 'Unfavourite-btn');
+        }
+    });
+});
+</script>
+{% endblock %}

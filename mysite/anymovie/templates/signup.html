@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    <div class="box-around">
+      {% for field in form.visible_fields %}
+        <div class="form-group">
+          <div class="float-left">
+            {{ field.label }} {{ ":" }}
+          </div>
+          {% render_field field class="form-control" placeholder=field.label %}
+          {% for error in field.errors %}
+            <span class="help-block">{{ error }}</span>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sign up</button>
+  </form>
+{% endblock %}

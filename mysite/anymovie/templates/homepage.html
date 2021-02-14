@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+{% block content %}
+  <div class="search">
+    <h2>Search movies</h2>
+    <form id="searchForm" class="search-form" action="/results/" method="get">
+      <div class="search-field">
+        <label for="movie_name">Enter name: </label>
+        <input id="movie_name" type="text" name="name_field" required="required" placeholder="Name">
+      </div>
+      <div class="search-field">
+        <label for="movie_year">Enter year: </label>
+        <input id="movie_year" type="text" name="year_field" placeholder="Year">
+      </div>
+      <div class="search-field">
+        <label for="movie_genre">Enter genre: </label>
+        <input id="movie_genre" type="text" name="genre_field" placeholder="Genre">
+      </div>
+      <div class="search-field">
+        <label for="movie_rating">Enter rating: </label>
+        <select id="movie_rating" name="movie_rating">
+        <option value=""></option>
+        {% for i in rating %}
+          <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+        </select>
+      </div>
+      <input type="submit" onclick="submitSearch()" value="Search">
+    </form>
+  </div> 
+
+  <div class="loader"></div>
+
+  <div class="search">
+    <h2>My Favourites</h2>
+    {% if favourites %}
+      <table id="results-table">
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Year</th>
+                <th>Rating</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for favourite in favourites %}
+            <tr>
+                <td><a href="/movie/{{favourite.t_id}}/">{{favourite.name}}</a></td>
+                <td>{{favourite.release_year}}</td>
+                <td>{{favourite.rating|floatformat:1}}</td>
+                <td width="150"><input type='button' value='Unfavourite' id="{{favourite.t_id}}" class="Unfavourite-btn"></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <h3>You don't have any favourites</h3>
+    {% endif %}
+  </div>  
+  <div class="search">
+    <h2>Recently Viewed</h2>
+    {% if history %}
+      <table id="results-table">
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Year</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for movie in history %}
+            <tr>
+                <td><a href="/movie/{{movie.t_id}}/">{{movie.name}}</a></td>
+                <td>{{movie.release_year}}</td>
+                <td>{{movie.rating|floatformat:1}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <h3>No movies viewed yet</h3>
+    {% endif %}
+  </div>  
+{% endblock %}
+{% block script %}
+<script>
+  function submitSearch() {
+    document.getElementsByClassName("loader")[0].style.display = "block";
+  }
+  
+  $(function () {
+    $(".Unfavourite-btn").on('click', function () {
+        var t_id = $(this).attr('id');
+        var value = $(this).attr('value');
+        console.log(t_id);
+        $.ajax({
+          type: 'POST',
+          data: {
+          value: value,
+          t_id: t_id,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+          },
+          dataType: 'json',
+          url: '/favourite/save/',
+          success: function (data) {
+            location.reload()
+          },
+          error: function(error) {
+          }
+        });
+    });
+});
+</script>
+{% endblock %}
+
+

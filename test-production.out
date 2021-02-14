@@ -1,0 +1,118 @@
+--Query 1, We use two SQL queries to check email validation and add entry to custom_user table these are run when user hits signup
+  postgres=> INSERT INTO custom_user (u_id, email, password, username) VALUES('50', 'testing@gmail.com', 'testpassword', 'tesing');
+  INSERT 0 1
+
+  postgres=> SELECT count(*) FROM custom_user WHERE email = 'testing@gmail.com';
+  count
+  -------
+      1
+  (1 row)
+
+--Query 2, Search for movies based on name, genre, rating, director, actors, language (display all matches)
+    t_id    |                                       name                                        |     type     |              genre              | release_year | rating | rating_count | isadult
+------------+-----------------------------------------------------------------------------------+--------------+---------------------------------+--------------+--------+--------------+---------
+ tt0642397  | The Godfather                                                                     | tvEpisode    | {Comedy}                        |         1991 |    8.4 |          385 | f
+ tt0089293  | Hong Kong Godfather                                                               | movie        | {Action,Thriller}               |         1985 |      7 |          127 | f
+ tt1779963  | James Brown: The Godfather of Soul                                                | tvEpisode    | {Biography,Documentary}         |         1996 |    7.8 |           44 | f
+ tt0384137  | The Godfathers of Mondo                                                           | video        | {Documentary}                   |         2003 |      7 |          157 | f
+ tt0650639  | Mr. Monk Meets the Godfather                                                      | tvEpisode    | {Comedy,Crime,Drama}            |         2004 |      8 |          491 | f
+ tt0068646  | The Godfather                                                                     | movie        | {Crime,Drama}                   |         1972 |    9.2 |      1506259 | f
+ tt0071562  | The Godfather: Part II                                                            | movie        | {Crime,Drama}                   |         1974 |      9 |      1054875 | f
+ tt0101961  | The Godfather Family: A Look Inside                                               | tvMovie      | {Documentary}                   |         1990 |    7.8 |          983 | f
+ tt0426698  | The Godfathers                                                                    | tvSeries     | {Comedy}                        |         1971 |    7.8 |           11 | f
+ tt2221825  | Paul Mooney: The Godfather of Comedy                                              | tvSpecial    | {Comedy}                        |         2012 |    7.1 |          130 | f
+ tt5277754  | Godfather World                                                                   | video        | {Short}                         |         2008 |    7.1 |           17 | f
+ tt2311160  | The Godfather Legacy                                                              | tvMovie      | {Documentary}                   |         2012 |    7.9 |          313 | f
+ tt4295042  | American Band Standoff or The Godfather of Soooul Train or Get on Your Goodfellas | tvEpisode    | {Action,Adventure,Animation}    |         2014 |    7.9 |           24 | f
+ tt0784109  | Godfathers of Havana                                                              | tvEpisode    | {Documentary,History}           |         2006 |    7.8 |            6 | f
+ tt0809433  | The Godfather                                                                     | videoGame    | {Action,Crime}                  |         1991 |    8.2 |           39 | f
+ tt9905338  | The Godfather                                                                     | tvEpisode    | {Comedy,Talk-Show}              |         2019 |    8.2 |            5 | f
+ tt7620412  | The Shocking Truth: The Godfather                                                 | tvEpisode    | {Documentary}                   |         2018 |      8 |           11 | f
+ tt2105820  | The Godfather of the Bride 2                                                      | tvEpisode    | {Adventure,Animation,Comedy}    |         2011 |    7.5 |           63 | f
+ tt0353496  | Godfather                                                                         | movie        | {Comedy,Drama,Romance}          |         1991 |    8.6 |         2580 | f
+ tt4659728  | The Godfathers of Hardcore                                                        | movie        | {Documentary,Music}             |         2017 |    7.5 |          383 | f
+ tt1020539  | The Godfather: Blackhand Edition                                                  | videoGame    | {Animation,Crime,Drama}         |         2007 |    8.6 |          145 | f
+ tt1050710  | Father and Godfather                                                              | movie        | {Drama}                         |         2007 |    8.5 |           82 | f
+ tt0691993  | The Godfather                                                                     | tvEpisode    | {Comedy}                        |         1981 |    9.5 |           21 | f
+ tt0841107  | The Godfather: Mob Wars                                                           | videoGame    | {Action,Crime,Drama}            |         2006 |      8 |          325 | f
+ tt0073054  | The Godfather Comes to Sixth St.                                                  | short        | {Short}                         |         1976 |    7.1 |           15 | f
+ tt7307218  | Gotti: Godfather and Son                                                          | tvMiniSeries | {Biography,Documentary}         |         2018 |    7.9 |          124 | f
+ tt7134208  | HAJI BAGCHO: The Godfather of Heroin                                              | tvEpisode    | {Thriller}                      |         2017 |    8.2 |            5 | f
+ tt0819367  | The Godfather and the Mob                                                         | tvMovie      | {Documentary}                   |         2006 |    7.8 |           54 | f
+ tt1471341  | The Godfather II: Crime Rings                                                     | videoGame    | {Crime}                         |         2008 |    8.1 |           29 | f
+ tt0388473  | Tokyo Godfathers                                                                  | movie        | {Adventure,Animation,Comedy}    |         2003 |    7.8 |        28016 | f
+ tt10289996 | The Black Godfather                                                               | movie        | {Documentary}                   |         2019 |    7.5 |          683 | f
+ tt1198207  | The Godfather II                                                                  | videoGame    | {Action,Crime,Drama}            |         2009 |    7.5 |         1062 | f
+ tt8080122  | Godfather of Harlem                                                               | tvSeries     | {Crime,Drama}                   |         2019 |      8 |         3341 | f
+ tt1067108  | The Godfather of Disco                                                            | movie        | {Documentary,Music}             |         2007 |    8.2 |           29 | f
+ tt1683431  | Herschell Gordon Lewis: The Godfather of Gore                                     | video        | {Documentary}                   |         2010 |    7.1 |          274 | f
+ tt4029382  | Godfathering                                                                      | tvEpisode    | {Comedy,Drama}                  |         2015 |    8.1 |          123 | f
+ tt3450096  | About a Godfather                                                                 | tvEpisode    | {Comedy,Drama,Romance}          |         2014 |    7.3 |          134 | f
+ tt0028367  | Three Godfathers                                                                  | movie        | {Action,Drama,Western}          |         1936 |    7.3 |          586 | f
+ tt0438855  | The Godfather of Cocaine                                                          | tvEpisode    | {Documentary}                   |         1995 |    8.4 |            5 | f
+ tt0644021  | The Godfather                                                                     | tvEpisode    | {Crime,Drama,Mystery}           |         1994 |      7 |           50 | f
+ tt1020540  | The Godfather: The Don's Edition                                                  | videoGame    | {Action,Crime,Drama}            |         2007 |      9 |          209 | f
+ tt0007453  | The Three Godfathers                                                              | movie        | {Western}                       |         1916 |    7.1 |           23 | f
+ tt0150742  | The Godfather Trilogy: 1901-1980                                                  | video        | {Crime,Drama,Thriller}          |         1992 |    9.3 |        14258 | f
+ tt0392433  | Medici: Godfathers of the Renaissance                                             | tvMiniSeries | {Biography,Documentary,History} |         2004 |    8.1 |          393 | f
+ tt0809488  | The Godfather Saga                                                                | tvMiniSeries | {Crime,Drama,Thriller}          |         1977 |    9.5 |         4056 | f
+ tt0512002  | Andy the Godfather                                                                | tvEpisode    | {Comedy}                        |         1955 |    8.8 |            9 | f
+ tt0442674  | The Godfather                                                                     | videoGame    | {Action,Adventure,Crime}        |         2006 |    8.3 |         3275 | f
+ tt0620778  | Godfather of Drugs                                                                | tvEpisode    | {Comedy}                        |         2005 |    8.4 |           54 | f
+ tt6812438  | My Father, Godfather                                                              | tvMovie      | {Comedy,Romance}                |         2016 |    8.7 |           19 | f
+ tt1065623  | Godfathers and Sons                                                               | tvEpisode    | {Documentary,Music}             |         2003 |    7.1 |          103 | f
+ tt5279892  | The Godfather: On Location                                                        | video        | {Short}                         |         2001 |    7.3 |            6 | f
+ tt5121326  | Godfather of Pawn                                                                 | tvEpisode    | {Reality-TV}                    |         2015 |    7.2 |           14 | f
+ tt5279902  | The Music of 'The Godfather'                                                      | video        | {Short}                         |         2001 |    7.4 |            7 | f
+ tt0460136  | The Godfather                                                                     | short        | {Short}                         |         1914 |    7.2 |            9 | f
+ tt0705331  | The Godfather                                                                     | tvEpisode    | {Comedy}                        |         1981 |    7.8 |           10 | f
+ tt10027356 | The Godfather Part II                                                             | tvEpisode    | {Comedy,Talk-Show}              |         2019 |    8.7 |            7 | f
+ tt4445128  | The Godfather                                                                     | tvEpisode    | {Comedy}                        |         2015 |    8.1 |           52 | f
+ tt0023902  | Godfather Mendoza                                                                 | movie        | {Drama,War}                     |         1934 |    7.7 |          396 | f
+ tt11290748 | Godfather of Harlem: Just in Case Feat. Swizz Beatz, Rick Ross, DMX               | video        | {Music,Short}                   |         2019 |    7.3 |           10 | f
+ tt1113794  | The Godfather: Behind the Scenes                                                  | short        | {Documentary,Short}             |         1971 |    7.6 |           59 | f
+ tt0649798  | Ed the Godfather                                                                  | tvEpisode    | {Comedy,Family,Fantasy}         |         1965 |    7.1 |           21 | f
+ tt0117503  | The Rockford Files: Godfather Knows Best                                          | tvMovie      | {Action,Crime,Drama}            |         1996 |    7.1 |          168 | f
+ tt0764361  | The Godfather of Waikiki                                                          | tvEpisode    | {Adventure,Crime,Reality-TV}    |         2004 |    7.4 |           10 | f
+ tt0811050  | Russian Godfathers                                                                | tvMovie      | {Documentary}                   |         2005 |    7.6 |           48 | f
+ tt0364378  | The Godfather                                                                     | short        | {Drama,Short}                   |         1911 |    7.6 |           27 | f
+ tt0539894  | The Godfather: Part 3                                                             | tvEpisode    | {Comedy,Drama}                  |         1987 |    7.6 |          252 | f
+ tt10408268 | The Godfather: Jupiter                                                            | tvEpisode    | {Documentary}                   |         2019 |    8.8 |          132 | f
+ tt0040064  | 3 Godfathers                                                                      | movie        | {Drama,Western}                 |         1948 |    7.1 |         7788 | f
+ tt1540460  | The Godfather                                                                     | tvEpisode    | {Comedy,Romance}                |         2009 |    7.5 |           53 | f
+ tt5277870  | Emulsional Rescue: Revealing 'The Godfather'                                      | video        | {Short}                         |         2008 |    8.1 |           13 | f
+ tt2979124  | The Godfather Legacy                                                              | tvEpisode    | {Documentary,History,War}       |         2012 |    7.5 |           11 | f
+ tt8756018  | The Godfather: Part 2                                                             | tvSeries     | {Action,Drama,Thriller}         |         2018 |    7.2 |           28 | f
+ tt5277996  | The Godfather: When the Shooting Stopped                                          | video        | {Short}                         |         2008 |    7.2 |           11 | f
+ tt0099674  | The Godfather: Part III                                                           | movie        | {Crime,Drama}                   |         1990 |    7.6 |       336967 | f
+ (74 rows)
+
+--Query 3, Accessing detailed movie informationc
+  -- get movie details
+      postgres=> SELECT * FROM title WHERE t_id = 'tt0642397';
+      t_id    |     name      |   type    |  genre   | release_year | rating | rating_count | isadult
+      -----------+---------------+-----------+----------+--------------+--------+--------------+---------
+      tt0642397 | The Godfather | tvEpisode | {Comedy} |         1991 |    8.4 |          385 | f
+      (1 row)
+
+  -- get movie principals (eg. actor, director)
+      postgres=>     SELECT t_id, category, name, characters FROM principals NATURAL JOIN person WHERE t_id = 'tt0642397';
+      t_id    | category |        name         |    characters
+      -----------+----------+---------------------+------------------
+      tt0642397 | actor    | Ed O'Neill          | ["Al Bundy"]
+      tt0642397 | actress  | Katey Sagal         | ["Peggy Bundy"]
+      tt0642397 | actress  | Amanda Bearse       | ["Marcy D'Arcy"]
+      tt0642397 | actress  | Christina Applegate | ["Kelly Bundy"]
+      tt0642397 | director | Gerry Cohen         |
+      tt0642397 | writer   | Ralph Farquhar      |
+      tt0642397 | writer   | Ron Leavitt         |
+      tt0642397 | writer   | Michael G. Moye     |
+      tt0642397 | producer | Barbara Cramer      |
+      tt0642397 | producer | Kevin Curran        |
+      (10 rows)
+
+  -- get movie reviews
+      postgres=> SELECT u_id, username, rating, comment, time FROM review as r NATURAL JOIN custom_user WHERE t_id = 'tt0642397' ORDER BY time DESC LIMIT 10;
+      u_id | username | rating | comment | time
+      ------+----------+--------+---------+------
+      (0 rows)

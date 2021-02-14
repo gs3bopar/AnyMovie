@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="box-around">
+    <div class="float-left">
+      {{ "Logged out! " }} <a href="{% url 'login'%}">Click here to login again.</a>
+    </div>
+  </div>
+{% endblock %}

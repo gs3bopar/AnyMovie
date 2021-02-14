@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+  <meta charset="utf-8">
+
+  {% block title %}
+  {% endblock %}
+</head>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<body>
+    <ul class="navbar">
+        <li class="logo"><img src="{% static 'images/anymovie.png' %}"/></li>
+        <li class="home"><a href="/">Home</a></li>
+        <li class="logout"><a  href="/accounts/logout">Logout</a></li>
+    </ul>
+    {% block content %}
+    {% endblock %}
+</body>
+{% block script %}
+{% endblock %}
+</html>

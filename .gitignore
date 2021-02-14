@@ -1,0 +1,6 @@
+cloud_sql_proxy
+mysite/.DS_Store
+.DS_Store
+*.pyc
+
+mysite/static/*

@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    padding: 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+
+.accounts-logo img{
+    height: 80px;
+}
+
+h1, h2, h3 {
+    margin: 0
+}
+
+.float-left {
+    float: left;
+    font-family: 'Gotu', sans-serif !important;
+}
+
+.box-around {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
