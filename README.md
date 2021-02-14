@@ -5,7 +5,7 @@ The purpose of this application is to give the user the ability to search for an
 Users can find movies on a variety of filtering criteria and can also post personal comments on Movies.
 
 Login page:
-![alt text](https://github.com/gs3bopar/AnyMovie/tree/main/images/1.png | width=100 )
+<img src="images/1.png" width="300" height="300">
 
 Main Screen:
 ![alt text](https://github.com/gs3bopar/AnyMovie/main/images/2.png =100x100)
